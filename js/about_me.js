@@ -1,7 +1,9 @@
-const toggle = document.getElementById("themeToggle");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (toggle) {
-  // Check user's previously saved theme choice on load
+  const toggle = document.getElementById("themeToggle");
+
+  if (!toggle) return;
+
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
     toggle.textContent = "☀️";
@@ -9,7 +11,6 @@ if (toggle) {
     toggle.textContent = "🌙";
   }
 
-  // Handle click events
   toggle.onclick = () => {
     document.body.classList.toggle("dark");
 
@@ -21,4 +22,5 @@ if (toggle) {
       localStorage.setItem("theme", "light");
     }
   };
-}
+
+});
