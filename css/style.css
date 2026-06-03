@@ -1,0 +1,316 @@
+:root{
+  --primary:#c8662d;
+  --bg:#f5f7fa;
+  --card:#fff;
+  --text:#1a1a1a;
+  --light:#555;
+}
+
+/* DARK MODE */
+body.dark{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#e5e7eb;
+  --light:#cbd5e1;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif;
+}
+
+html,
+body{
+    background: var(--bg);
+    color: var(--text);
+    min-height:100vh;
+    overflow-x: hidden;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  transition:0.3s;
+    width: 100%;
+}
+
+/* PROGRESS BAR */
+#progressBar{
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  width:0%;
+  background:var(--primary);
+  z-index:9999;
+}
+
+/* NAV */
+.navbar{
+  position:sticky;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:var(--card);
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
+  color: var(--text);
+  transition: .3s;
+}
+
+.logo{
+  background:var(--primary);
+  color:#fff;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:700;
+}
+
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--text);
+}
+
+.theme-toggle{
+  border:none;
+  background:transparent;
+  font-size:18px;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:80px 10%;
+}
+
+.hero h1{
+  font-size:42px;
+}
+
+.hero span{
+  color:var(--primary);
+}
+
+.typing{
+  color:var(--primary);
+  font-weight:500;
+  margin:10px 0;
+}
+
+.bio{
+  margin-top:10px;
+  line-height:1.7;
+  color:var(--light);
+  width: 80%;
+  text-align: justify;
+}
+
+.more-text{
+  display:none;
+}
+
+.bio-toggle{
+  margin-top:10px;
+  border:none;
+  background:none;
+  color:var(--primary);
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* BUTTONS */
+.buttons{
+  margin-top:20px;
+}
+
+.btn{
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  margin-right:10px;
+}
+
+.primary{
+  background:var(--primary);
+  color:#fff;
+}
+
+.secondary{
+  border:2px solid var(--primary);
+  color:var(--primary);
+}
+
+/* SECTIONS */
+.section{
+  padding:80px 10%;
+}
+
+/* PROJECTS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:15px;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+/* AVATAR (ELITE UPGRADE) */
+.hero-img{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.avatar-card{
+  position:relative;
+  width:380px;
+  height:400px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-img .avatar-card .avatar img{
+  width:330px;
+  height:350px;
+  border-radius:10px;
+  background:var(--card);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.avatar-glow{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(45deg,#04b0d3,#6e2ede,#00ff40);
+  border-radius:5%;
+  filter:blur(20px);
+  opacity:0.6;
+  animation:floatGlow 4s ease-in-out infinite;
+}
+
+.avatar{
+  width:330px;
+  height:350px;
+  border-radius:50%;
+  background:var(--card);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:60px;
+  font-weight:700;
+  color:var(--primary);
+  z-index:2;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+.card,
+.avatar,
+.avatar img,
+.section,
+.hero{
+    background: transparent;
+    color: var(--text);
+}
+
+.section a{
+  text-decoration: none;
+  color: red;
+}
+
+@keyframes floatGlow{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.08);}
+  100%{transform:scale(1);}
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--light);
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+.hero-img .avatar-card .avatar img{
+  min-width: 200px;
+  height:350px;
+  border-radius:10px;
+  background:var(--card);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+@media(max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+    padding:15px;
+  }
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+
+  nav a{
+    margin-left:0;
+  }
+
+}
+.bio{
+  
+  width: 100%;
+  
+}
+
+.hero-img .avatar-card .avatar img{
+  min-width:50px;
+  height:350px;
+}
+
+.hero-img{
+  margin-top: 80px;
+}
