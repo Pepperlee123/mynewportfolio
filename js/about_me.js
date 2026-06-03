@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.textContent = "☀️";
   } else {
     toggle.textContent = "🌙";
+    console.log(document.body.classList);
   }
+  
 
   toggle.onclick = () => {
     document.body.classList.toggle("dark");
